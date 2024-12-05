@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MI UPC</title>
+    <link rel="stylesheet" href="./css/tailwind.css" />
+  </head>
+  <body>
+    <!-- HEADER --> 
+    <header class="header justify-between">
+        <div class="flex items-center">
+            <a href="/">
+                <img src="./images/logo-mi-upc.svg" alt="logo-mi-upc" class="w-25" />
+            </a>
+            <div class="hidden lg:block ml-8">
+                <ul class="flex justify-start items-center">
+                    <li class="relative py-1 lg:py-0 lg:px-4"> 
+                        <a href="#" class="lg:flex lg:justify-start">
+                            <span class="text-fap-base pr-1 text-lg lg:text-base">CORREO</span>
+                            <img src="./images/icon-email.svg" alt="e-mail" class="hidden lg:block">
+                        </a>
+                    </li>
+                    <li class="relative py-1 lg:py-0 lg:px-4">
+                        <a href="#" class="lg:flex lg:justify-start after:content-[''] after:h-2 after:left-0 after:absolute after:bottom-2 after:border after:border-fap-red">
+                            <span class="text-fap-base pr-1 text-lg lg:text-base">AULA VIRTUAL</span>
+                            <img src="./images/icon-aula.svg" alt="classroom" class="hidden lg:block">
+                        </a>
+                    </li>
+                    <li class="relative py-1 lg:py-0 lg:px-4">
+                        <a href="#" class="lg:flex lg:justify-start after:content-[''] after:h-2 after:left-0 after:absolute after:bottom-2 after:border after:border-fap-red">
+                            <span class="text-fap-base pr-1 text-lg lg:text-base">MÁS SERVICIOS</span>
+                            <img src="./images/icon-service.svg" alt="services" class="hidden lg:block">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="flex items-center">
+            <div class="hidden lg:block">
+                <div class="relative lg:mr-5 text-fap-red flex border border-fap-red py-1.5 px-2 rounded">
+                    <span class="pr-1 text-lg lg:text-base">¿NECESITAS AYUDA?</span>
+                    <span class="object-fill text-2xl hidden lg:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>                                                    
+                    </span>
+                </div>
+            </div>
+            <button class="flex items-center justify-center ml-5 border border-black rounded-full relative p-1.5 before:content-[''] before:absolute before:border-l before:border-gray-400 before:w-1 before:h-4 before:left-[-15px]  before:top-3">
+                <span class="object-fill text-xl text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5" />
+                    </svg>                      
+                </span>
+            </button>
+            <div class="mt-2 lg:mt-0 ml-4">
+                <div class="hidden lg:flex lg:items-center">
+                    <div class="w-10 h-10 rounded-full overflow-hidden bg-fap-neutral-2 mr-1">
+                        <img src="./images/perfil.jpg" alt="account" class="w-10 w-ful h-full object-fill">
+                    </div>
+                    <p class="text-black font-bold font-Zizou mx-2">Andersson Marcos</p>
+                    <span class="text-xs">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>                      
+                    </span>
+                </div>
+            </div>
+        </div>
+         
+    </header>
+    <div>
+        <!-- NAVBAR -->
+        <nav class="menunav hidden lg:block">
+            <ul class="pt-4 lg:pt-10">
+                <li class="cursor-pointer pb-7 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1">
+                    <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
+                        <a href="" class="flex py-2 lg:py-0">
+                            <img src="./images/icon-home.svg" alt="" class="text-2xl group-hover:invert ">
+                            <span class="text mt-[3px] selected uppercase text-sm pl-2">Inicio</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="cursor-pointer pb-7 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 ">
+                    <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
+                        <a href="" class="flex py-2 lg:py-0">
+                            <img src="./images/icon-book.svg" alt="" class="text-2xl group-hover:invert">
+                            <span class="text mt-[3px] selected uppercase text-sm pl-2">Mis Estudios</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="cursor-pointer pb-7 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1">
+                    <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
+                        <a href="" class="flex py-2 lg:py-0">
+                            <img src="./images/icon-note.svg" alt="" class="text-2xl group-hover:invert">
+                            <span class="text mt-0.5 uppercase text-sm pl-2">Tramites</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="cursor-pointer pb-7 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1">
+                    <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
+                        <a href="" class="flex py-2 lg:py-0">
+                            <img src="./images/icon-pay.svg" alt="" class="text-2xl group-hover:invert">
+                            <span class="text mt-[3px] selected uppercase text-sm pl-2">Finanzas</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="cursor-pointer pb-7 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1">
+                    <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
+                        <a href="" class="flex py-2 lg:py-0">
+                            <img src="./images/icon-calendar.svg" alt="" class="text-2xl group-hover:invert">
+                            <span class="text mt-[3px] selected uppercase text-sm pl-2">Reservas</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="cursor-pointer pb-7 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1">
+                    <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
+                        <a href="" class="flex py-2 lg:py-0">
+                            <img src="./images/icon-voice.svg" alt="" class="text-2xl group-hover:invert">
+                            <span class="text mt-[3px] selected uppercase text-sm pl-2">Informativo</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="pt-16 transition-[margin] duration-200 lg:ml-36">
+            <div class="lg:grid lg:grid-cols-[1fr_306px] bg-fap-background">
+                <div>
+                    <div class="mb-1 aspect-[34/5]">
+                        <div class="">
+                            <a href="#" target="_blank">
+                                <img src="./images/comunicado-sistema.jpg" alt="" class="w-full h-full no-pointer-events">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="py-8 px-3 lg:px-10">
+                        
+                        <div class="">
+                            <article class="grid grid-cols-[160px,1fr] pt-6">
+                                <div class="flex items-center md:w-[120px] md:h-[120px] mx-auto">
+                                   <img src="./images/bienvenida-portal.gif" alt="" class="md:w-[120px] md:h-[120px]">
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <div class="flex items-end mb-1">
+                                        <h1 class="text-[18px] font-Zizou font-medium tracking-tighter">
+                                            <span>Bienvenido,</span>
+                                            <span class="text-fap-blue font-bold text-xl tracking-wide">&nbsp; Andersson M.</span>
+                                        </h1>
+                                    </div>
+                                    <div class="text-[18px] font-Zizou font-medium tracking-tight">
+                                        <p>¡Bienvenido a tu Portal del Estudiante!</p>
+                                    </div>
+                                </div>
+                             
+                            </article>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 gap-6 mb-6">
+                            <!-- ARTICLE -->
+                            <article class="flex flex-col rounded-lg bg-white p-6">
+                                <div class="card-h-title-container mb-6">
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h2 class="text-4xl uppercase text-fap-blue-dark">Mis Horarios</h2>
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-11  text-red-500" >
+                                                <path stroke-linecap="round"  stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
+                                            </svg>                                             
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <a href="" class="flex items-center text-fap-red">
+                                            <span class="font-Zizou text-sm font-extrabold">Ver todo</span>
+                                            <span class="pt-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                                                </svg>                                                  
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="flex gap-x-4">
+                                    <button class="cursor-pointer bg-fap-blue-light text-fap-blue-dark py-1 px-4 tracking-normal font-extrabold font-Zizou rounded-md">HOY jueves 05/12</button>
+                                    <button class="cursor-pointer bg-gray-100 text-fap-blue-dark py-1 px-4 tracking-normal font-extrabold font-Zizou rounded-md">Mañana viernes 06/12</button>
+                                </div>
+                                <div class="scroll-h lg:max-h-[200px] border-gray-200 border-[1px] mt-5">
+                                    <div class="px-3 py-4 bg-white">
+                                        <div class="flex mb-4"> 
+                                            <div class="relative pr-2 border border-red-600">
+                                                <span class="text-sm text-slate-500 font-Zizou tracking-tight relative after:content-[''] after:bottom-[-6px] after:h-[1.70px] after:absolute after:left-5 after:w-3 after:bg-gray-500">
+                                                    19:00:00
+                                                </span>
+                                                <br>
+                                                <span class="text-sm text-slate-500 font-Zizou tracking-tight relative">
+                                                    22:00:00
+                                                </span>
+                                            </div>
+                                            <div class="relative pl-2 after:content-[''] after:border-l-2 after:border-l-purple-700 after:absolute after:w-2">
+                                                <span class="font-solano text-xl">REDES Y COMUNICACIÓN DE DATOS II</span>
+                                                <div class="flex gap-x-5">
+                                                    <div class="flex items-center">
+                                                        <span class="font-solano">
+                                                            NRC: &nbsp;
+                                                        </span>
+                                                        <span class="text-sm text-[#665586]">
+                                                            C51B
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex items-center">
+                                                        <span class="font-solano">
+                                                            Salón: &nbsp;
+                                                        </span>
+                                                        <span class="text-sm text-[#665586]">
+                                                            ICAMP
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- ARTICLE -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="py-6 px-6 lg:min-h-aside bg-[#E8E8E8]">
+
+                </div>
+            </div>
+        </main>
+    </div>
+  </body>
+</html>
