@@ -5,11 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MI UPC</title>
     <link rel="stylesheet" href="./css/tailwind.css" />
+    <script src="./js/libraries/typed.umd.js"></script>
   </head>
   <body>
     <!-- HEADER --> 
     <header class="header justify-between">
         <div class="flex items-center">
+            <button id="btnHamburger" class="lg:hidden mr-3 w-[17px]">
+                <span>
+                    <svg id="svg-hamburger" class=" size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.5 21.64" fill="none">
+                        <path id="Path_75640" data-name="Path 75640" d="M25.5,4.18H1.5a.75.75,0,1,1,0-1.5h24a.75.75,0,1,1,0,1.5Z" transform="translate(-0.75 -2.68)" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path id="Path_75641" data-name="Path 75641" d="M25.5,10.89H1.5a.75.75,0,1,1,0-1.5h24a.75.75,0,0,1,0,1.5Z" transform="translate(-0.75 -2.68)" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path id="Path_75642" data-name="Path 75642" d="M12.66,24.32H1.5a.75.75,0,0,1,0-1.5H12.66a.75.75,0,0,1,0,1.5Z" transform="translate(-0.75 -2.68)" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path id="Path_75643" data-name="Path 75643" d="M25.5,17.61H1.5a.75.75,0,0,1,0-1.5h24a.75.75,0,0,1,0,1.5Z" transform="translate(-0.75 -2.68)" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path>
+                    </svg>                 
+                    <svg id="svg-x-mark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>                          
+                </span>
+            </button>
             <a href="/">
                 <img src="./images/logo-mi-upc.svg" alt="logo-mi-upc" class="w-25" />
             </a>
@@ -55,7 +66,7 @@
                     </svg>                      
                 </span>
             </button>
-            <div class="mt-2 lg:mt-0 ml-4">
+            <div class="mt-0.5 lg:mt-0 ml-4">
                 <div class="hidden lg:flex lg:items-center">
                     <div class="w-10 h-10 rounded-full overflow-hidden bg-fap-neutral-2 mr-1">
                         <img src="./images/perfil.jpg" alt="account" class="w-10 w-ful h-full object-fill">
@@ -67,87 +78,250 @@
                         </svg>                      
                     </span>
                 </div>
+                <div class="relative lg:hidden">
+                    <div class="w-[40px] h-[40px] rounded-full overflow-hidden bg-neutral-2">
+                        <img src="./images/perfil.jpg" alt="perfil" class="object-fit w-full h-full">
+                        <span class="nuxt-icon lg:hidden absolute right-[-5px] bottom-[-0.125em]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
+                                <g id="Grupo_82479" data-name="Grupo 82479" transform="translate(-25.976 -26)">
+                                  <circle id="Elipse_13369" data-name="Elipse 13369" cx="7" cy="7" r="7" transform="translate(25.976 26)" fill="#35158c"></circle>
+                                  <path id="Trazado_109074" data-name="Trazado 109074" d="M11.193,2.745a1.013,1.013,0,1,1,1.013-1.013A1.016,1.016,0,0,1,11.193,2.745Z" transform="translate(21.796 27.915)" fill="#fff"></path>
+                                  <path id="Trazado_109075" data-name="Trazado 109075" d="M11.193,12.325a1.013,1.013,0,1,1,1.013-1.013A1.016,1.016,0,0,1,11.193,12.325Zm0-.475Z" transform="translate(21.796 21.366)" fill="#fff"></path>
+                                  <path id="Trazado_109076" data-name="Trazado 109076" d="M11.193,21.905a1.013,1.013,0,1,1,1.013-1.013A1.016,1.016,0,0,1,11.193,21.905Z" transform="translate(21.796 14.818)" fill="#fff"></path>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
          
     </header>
+
     <div>
         <!-- NAVBAR -->
-        <nav class="menunav hidden lg:block">
+        <nav class="menunav hidden lg:block"> 
             <ul class="pt-4 lg:pt-10">
-                <li class="cursor-pointer mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
+                <li class="cursor-pointer mb-1 lg:mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
                     <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
-                        <a href="" class="flex py-2 lg:py-0">
-                            <img src="./images/icon-home.svg" alt="" class="text-2xl group-hover:invert ">
-                            <span class="text mt-[3px] uppercase text-sm pl-2">Inicio</span>
+                        <a href="" class="max-lg:w-full flex max-lg:justify-between max-lg:pl-2 py-2 lg:py-0 items-center">
+                            <div class="flex">
+                                <img src="./images/icon-home.svg" alt="" class="text-2xl group-hover:invert">
+                                <span class="text mt-[3px] uppercase text-xl lg:text-sm  pl-2">Inicio</span>
+                            </div>                          
+                            <span class="pr-4 text-fap-neutral lg:hidden">
+                                <svg id="iconPlusShowDetails" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 13.5" class="size-4 group-hover:invert">
+                                    <path id="Path_101750" data-name="Path 101750" d="M104.166,6h-5.25V.75a.75.75,0,0,0-1.5,0V6h-5.25a.75.75,0,0,0,0,1.5h5.25v5.25a.75.75,0,0,0,1.5,0V7.5h5.25a.75.75,0,0,0,0-1.5" transform="translate(-91.416)"></path>
+                                </svg>
+                            </span>
                         </a>
                     </div>
                     <ul class="sub-nav-item shadow hidden">
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Portal</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Dashboard</a></li> 
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                               </svg>
+                               &nbsp;Portal
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                   <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                               </svg>                              
+                               &nbsp;Dashboard
+                            </a>
+                        </li> 
                     </ul>
                 </li>
-                <li class="cursor-pointer mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
+                <li class="cursor-pointer mb-1 lg:mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
                     <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group ">
-                        <a href="" class="flex py-2 lg:py-0">
-                            <img src="./images/icon-book.svg" alt="" class="text-2xl group-hover:invert">
-                            <span class="text mt-[3px] uppercase text-sm pl-2">Mis Estudios</span>
+                        <a href="" class="max-lg:w-full flex max-lg:justify-between max-lg:pl-2 py-2 lg:py-0 items-center">
+                            <div class="flex">
+                                <img src="./images/icon-book.svg" alt="" class="text-2xl group-hover:invert">
+                                <span class="text mt-[3px] uppercase text-xl lg:text-sm  pl-2">Mis Estudios</span>
+                            </div>
+                            <span class="pr-4 text-fap-neutral lg:hidden">
+                                <svg id="iconPlusShowDetails" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 13.5" class="size-4 group-hover:invert">
+                                    <path id="Path_101750" data-name="Path 101750" d="M104.166,6h-5.25V.75a.75.75,0,0,0-1.5,0V6h-5.25a.75.75,0,0,0,0,1.5h5.25v5.25a.75.75,0,0,0,1.5,0V7.5h5.25a.75.75,0,0,0,0-1.5" transform="translate(-91.416)"></path>
+                                </svg>
+                            </span>
                         </a>
                     </div>
                     <ul class="sub-nav-item shadow hidden">
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Cursos y Notas</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Horarios</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Matricula</a></li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Cursos y Notas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Horarios
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Matricula
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li class="cursor-pointer mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
+                <li class="cursor-pointer mb-1 lg:mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
                     <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
-                        <a href="" class="flex py-2 lg:py-0">
-                            <img src="./images/icon-note.svg" alt="" class="text-2xl group-hover:invert">
-                            <span class="text mt-0.5 uppercase text-sm pl-2">Tramites</span>
+                        <a href="" class="max-lg:w-full flex max-lg:justify-between max-lg:pl-2 py-2 lg:py-0 items-center">
+                            <div class="flex">
+                               <img src="./images/icon-note.svg" alt="" class="text-2xl group-hover:invert">
+                               <span class="text mt-0.5 uppercase text-xl lg:text-sm pl-2">Tramites</span>
+                            </div>
+                            <span class="pr-4 text-fap-neutral lg:hidden">
+                                <svg id="iconPlusShowDetails" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 13.5" class="size-4 group-hover:invert">
+                                    <path id="Path_101750" data-name="Path 101750" d="M104.166,6h-5.25V.75a.75.75,0,0,0-1.5,0V6h-5.25a.75.75,0,0,0,0,1.5h5.25v5.25a.75.75,0,0,0,1.5,0V7.5h5.25a.75.75,0,0,0,0-1.5" transform="translate(-91.416)"></path>
+                                </svg>
+                            </span>
                         </a>
                     </div>
                     <ul class="sub-nav-item shadow hidden">
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Estado de Trámites</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Listado de Trámites</a></li> 
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Estado de Trámites
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Listado de Trámites
+                            </a>
+                        </li> 
                     </ul>
                 </li>
-                <li class="cursor-pointer mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
+                <li class="cursor-pointer mb-1 lg:mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
                     <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
-                        <a href="" class="flex py-2 lg:py-0">
-                            <img src="./images/icon-pay.svg" alt="" class="text-2xl group-hover:invert">
-                            <span class="text mt-[3px] uppercase text-sm pl-2">Finanzas</span>
+                        <a href="" class="max-lg:w-full flex max-lg:justify-between max-lg:pl-2 py-2 lg:py-0 items-center">
+                            <div class="flex">
+                               <img src="./images/icon-pay.svg" alt="" class="text-2xl group-hover:invert">
+                               <span class="text mt-[3px] uppercase text-xl lg:text-sm pl-2">Finanzas</span>
+                            </div>
+                            <span class="pr-4 text-fap-neutral lg:hidden">
+                                <svg id="iconPlusShowDetails" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 13.5" class="size-4 group-hover:invert">
+                                    <path id="Path_101750" data-name="Path 101750" d="M104.166,6h-5.25V.75a.75.75,0,0,0-1.5,0V6h-5.25a.75.75,0,0,0,0,1.5h5.25v5.25a.75.75,0,0,0,1.5,0V7.5h5.25a.75.75,0,0,0,0-1.5" transform="translate(-91.416)"></path>
+                                </svg>
+                            </span>
                         </a>
                     </div>
                     <ul class="sub-nav-item shadow hidden">
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Mis pagos pendientes</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Consulta de comprobantes</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Facturación</a></li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp; Mis pagos pendientes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Consulta de comprobantes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Facturación
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                <li class="cursor-pointer mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
+                <li class="cursor-pointer mb-1 lg:mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
                     <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
-                        <a href="" class="flex py-2 lg:py-0">
-                            <img src="./images/icon-calendar.svg" alt="" class="text-2xl group-hover:invert">
-                            <span class="text mt-[3px] uppercase text-sm pl-2">Reservas</span>
+                        <a href="" class="max-lg:w-full flex max-lg:justify-between  max-lg:pl-2 py-2 lg:py-0 items-center">
+                            <div class="flex">
+                              <img src="./images/icon-calendar.svg" alt="" class="text-2xl group-hover:invert">
+                              <span class="text mt-[3px] uppercase text-xl lg:text-sm  pl-2">Reservas</span>
+                            </div>
+                            <span class="pr-4 text-fap-neutral lg:hidden">
+                                <svg id="iconPlusShowDetails" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 13.5" class="size-4 group-hover:invert">
+                                    <path id="Path_101750" data-name="Path 101750" d="M104.166,6h-5.25V.75a.75.75,0,0,0-1.5,0V6h-5.25a.75.75,0,0,0,0,1.5h5.25v5.25a.75.75,0,0,0,1.5,0V7.5h5.25a.75.75,0,0,0,0-1.5" transform="translate(-91.416)"></path>
+                                </svg>
+                            </span>
                         </a>
                     </div>
                     <ul class="sub-nav-item shadow hidden">
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Reserva espacio deportivo</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Más reservas</a></li> 
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp; Reserva espacio deportivo
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp; Más reservas
+                            </a>
+                        </li> 
                     </ul>
                 </li>
-                <li class="cursor-pointer mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
+                <li class="cursor-pointer mb-1 lg:mb-6 ml-5 max-sm:pl-6 max-sm:pr-3 lg:pr-1 relative menu-item">
                     <div class="flex rounded-md w-full max-sm:px-2 lg:pl-1 lg:py-1.5 hover:bg-fap-red hover:text-white group">
-                        <a href="" class="flex py-2 lg:py-0">
-                            <img src="./images/icon-voice.svg" alt="" class="text-2xl group-hover:invert">
-                            <span class="text mt-[3px] uppercase text-sm pl-2">Informativo</span>
+                        <a href="" class="max-lg:w-full flex max-lg:justify-between max-lg:pl-2 py-2 lg:py-0 items-center">
+                            <div class="flex">
+                              <img src="./images/icon-voice.svg" alt="" class="text-2xl group-hover:invert">
+                              <span class="text mt-[3px] uppercase text-xl lg:text-sm pl-2">Informativo</span>
+                            </div>
+                            <span class="pr-4 text-fap-neutral lg:hidden">
+                                <svg id="iconPlusShowDetails" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.5 13.5" class="size-4 group-hover:invert">
+                                    <path id="Path_101750" data-name="Path 101750" d="M104.166,6h-5.25V.75a.75.75,0,0,0-1.5,0V6h-5.25a.75.75,0,0,0,0,1.5h5.25v5.25a.75.75,0,0,0,1.5,0V7.5h5.25a.75.75,0,0,0,0-1.5" transform="translate(-91.416)"></path>
+                                </svg>
+                            </span>
                         </a>
                     </div>
                     <ul class="sub-nav-item shadow hidden">
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Noticias</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Comunicado</a></li>
-                        <li><a href="" class="text-black hover:bg-black hover:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">Novedades</a></li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Noticias
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Comunicado
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="max-lg:py-1 max-lg:pl-1 text-black hover:bg-slate-300 hover-lg:bg-black hover-lg:text-white flex items-center w-full uppercase before:content-[''] before:ml-5 before:py-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 lg:hidden">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>                              
+                                &nbsp;Novedades
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -166,11 +340,11 @@
                     <div class="py-8 px-3 lg:px-10">
                         
                         <div class="pb-8">
-                            <article class="grid grid-cols-[160px,1fr] pt-6">
+                            <article class="grid grid-cols-1 lg:grid-cols-[160px,1fr] pt-6">
                                 <div class="flex items-center md:w-[120px] md:h-[120px] mx-auto">
                                    <img src="./images/bienvenida-portal.gif" alt="" class="md:w-[120px] md:h-[120px]">
                                 </div>
-                                <div class="flex flex-col justify-center">
+                                <div class="flex flex-col justify-center max-lg:mt-3 max-lg:px-4">
                                     <div class="flex items-end mb-1">
                                         <h1 class="text-[18px] font-Zizou font-medium tracking-tighter">
                                             <span>Bienvenido,</span>
@@ -179,6 +353,7 @@
                                     </div>
                                     <div class="text-[18px] font-Zizou font-medium tracking-tight">
                                         <p>¡Bienvenido a tu Portal del Estudiante!</p>
+                                        <span id="msgTyped"></span>
                                     </div>
                                 </div>
                              
@@ -748,7 +923,7 @@
                 </div>
             </div>
         </main>
-    </div>
+    </div> 
     <script src="./js/app.js"></script>
   </body>
 </html>
