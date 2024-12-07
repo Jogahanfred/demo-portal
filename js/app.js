@@ -10,12 +10,22 @@ var typed = new Typed('#msgTyped', {
   loopCount: Infinity,
 });
 
-const showNavbar = () => {
+const showSidenav = () => {
   const svgHamburger = document.getElementById("svg-hamburger");
   const svgXMark = document.getElementById("svg-x-mark");
   const navbar = document.querySelector(".menunav");
 
   if (svgXMark.classList.contains("hidden")) {
+    
+    const contentNavbarAccount = document.getElementById("content-navbar-account");
+    const btnCloseContentNavbarAccount = document.getElementById("btn-close-content-navbar-account");
+    const contentImageAccount = document.getElementById("content-image-account");
+    if (!contentNavbarAccount.classList.contains('hidden')) {
+      contentNavbarAccount.classList.add('hidden')
+      btnCloseContentNavbarAccount.classList.add('hidden')
+      contentImageAccount.classList.remove('hidden') 
+    }
+
     navbar.classList.remove("hidden");
     svgHamburger.classList.add("hidden");
     svgXMark.classList.remove("hidden");
@@ -26,8 +36,42 @@ const showNavbar = () => {
   }
 };
 
+const showNavBarAccount = () => { 
+  const contentNavbarAccount = document.getElementById("content-navbar-account");
+  const btnCloseContentNavbarAccount = document.getElementById("btn-close-content-navbar-account");
+  const contentImageAccount = document.getElementById("content-image-account");
+  
+  if (contentNavbarAccount.classList.contains("hidden")) {
+    const svgHamburger = document.getElementById("svg-hamburger");
+    const svgXMark = document.getElementById("svg-x-mark");
+    const navbar = document.querySelector(".menunav");
+    if (!navbar.classList.contains('hidden')) {
+      navbar.classList.add("hidden");
+      svgXMark.classList.add("hidden");
+      svgHamburger.classList.remove("hidden");
+    }
+
+    contentNavbarAccount.classList.remove("hidden");
+    btnCloseContentNavbarAccount.classList.remove('hidden')
+    contentImageAccount.classList.add('hidden') 
+  } else {
+    contentNavbarAccount.classList.add("hidden");
+    btnCloseContentNavbarAccount.classList.add('hidden')
+    contentImageAccount.classList.remove('hidden') 
+  }
+};
+
+const btnShowNavbarAccount = document.getElementById("btn-show-navbar-account");
+btnShowNavbarAccount.addEventListener("click", showNavBarAccount);
+
+const btnCloseContentNavbarAccount = document.getElementById("btn-close-content-navbar-account");
+btnCloseContentNavbarAccount.addEventListener("click", showNavBarAccount);
+
+const btnArrowAccountLGDown = document.getElementById("btn-arrow-account-lg-down");
+btnArrowAccountLGDown.addEventListener("click", showNavBarAccount);
+
 const btnHamburger = document.getElementById("btnHamburger");
-btnHamburger.addEventListener("click", showNavbar);
+btnHamburger.addEventListener("click", showSidenav);
 
 const btnPlusCourse1 = document.getElementById("btn-plus-course-1");
 
@@ -180,15 +224,55 @@ function selectMenuItem(e) {
   menuLink.classList.add("selected-menu");
 }
 
+const showContentHelp = () => {
+  const btnArrowUp = document.getElementById('btn-arrow-up')
+  const btnArrowDown = document.getElementById('btn-arrow-down')
+  const contentSubMenu = document.getElementById('content-sub-menu')
+
+  const divContentMain = contentSubMenu.previousElementSibling
+  const spanTitle = divContentMain.querySelector('span')
+
+  if (contentSubMenu.classList.contains('hidden')) {
+    spanTitle.classList.add('text-fap-red')
+    contentSubMenu.classList.remove('hidden')
+
+    btnArrowDown.classList.remove('block')
+    btnArrowDown.classList.add('hidden')    
+
+    btnArrowUp.classList.add('block')
+    btnArrowUp.classList.remove('hidden')
+  }else{
+    contentSubMenu.classList.add('hidden')
+    spanTitle.classList.remove('text-fap-red')
+    
+   btnArrowDown.classList.remove('hidden')
+    btnArrowDown.classList.add('block')    
+    
+    btnArrowUp.classList.add('hidden')
+    btnArrowUp.classList.remove('block')
+  }
+  // if (menu.classList.contains('opacity-0') && menu.classList.contains('translate-x-[-100%]')) {
+  //   menu.classList.remove("hidden");
+  //   menu.classList.remove('opacity-0', 'translate--[-100%]');
+  //   menu.classList.add('opacity-100', 'translate-x-0');
+  // } else {
+  //   menu.classList.add("hidden");
+  //   menu.classList.remove('opacity-100', 'translate-y-0');
+  //   menu.classList.add('opacity-0', 'translate-y-[-100%]');
+  // }
+}
+
+const btnShowIconHelp = document.getElementById('btn-show-icon-help');
+btnShowIconHelp.addEventListener('click', showContentHelp)
 
 // Inicializamos los eventos de acuerdo al tamaño de la pantalla
 handleMenuItems();
 
 document.addEventListener("DOMContentLoaded", () => {
-  const firstMenuLink = document.querySelector('a[href=""]');
-  if (firstMenuLink) {
-    firstMenuLink.classList.add("selected-menu");
-  }
+  // const firstMenuLink = document.querySelector('a[href=""]');
+  // if (firstMenuLink) {
+  //   firstMenuLink.classList.add("selected-menu");
+  // }
 
   // Detectar cambio de tamaño
   window.addEventListener("resize", () => {
