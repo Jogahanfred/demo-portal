@@ -37,6 +37,7 @@ const showSidenav = () => {
 };
 
 const showNavBarAccount = () => { 
+    
   const contentNavbarAccount = document.getElementById("content-navbar-account");
   const btnCloseContentNavbarAccount = document.getElementById("btn-close-content-navbar-account");
   const contentImageAccount = document.getElementById("content-image-account");
@@ -67,8 +68,24 @@ btnShowNavbarAccount.addEventListener("click", showNavBarAccount);
 const btnCloseContentNavbarAccount = document.getElementById("btn-close-content-navbar-account");
 btnCloseContentNavbarAccount.addEventListener("click", showNavBarAccount);
 
+const toggleBtnArrowLGAccount = () => {
+  const btnArrowAccountLGDown = document.getElementById("btn-arrow-account-lg-down");
+  const btnArrowAccountLGUp = document.getElementById("btn-arrow-account-lg-up");
+  if (!btnArrowAccountLGDown.classList.contains('hidden')) {
+    btnArrowAccountLGDown.classList.add('hidden');
+    btnArrowAccountLGUp.classList.remove('hidden');
+  }else {
+    btnArrowAccountLGUp.classList.add('hidden');
+    btnArrowAccountLGDown.classList.remove('hidden');
+  }
+}
+
+
+const btnArrowAccountLGUp = document.getElementById("btn-arrow-account-lg-up");
+btnArrowAccountLGUp.addEventListener("click", () => {showNavBarAccount(), toggleBtnArrowLGAccount()});
+
 const btnArrowAccountLGDown = document.getElementById("btn-arrow-account-lg-down");
-btnArrowAccountLGDown.addEventListener("click", showNavBarAccount);
+btnArrowAccountLGDown.addEventListener("click", () => {showNavBarAccount(), toggleBtnArrowLGAccount()});
 
 const btnHamburger = document.getElementById("btnHamburger");
 btnHamburger.addEventListener("click", showSidenav);
@@ -264,6 +281,13 @@ const showContentHelp = () => {
 
 const btnShowIconHelp = document.getElementById('btn-show-icon-help');
 btnShowIconHelp.addEventListener('click', showContentHelp)
+
+const btnCloseRelease = document.getElementById('btn-close-release');
+btnCloseRelease.addEventListener('click', () => {
+  const contentRelease = document.getElementById('content-release');
+  contentRelease.classList.add('hidden')
+})
+
 
 // Inicializamos los eventos de acuerdo al tamaño de la pantalla
 handleMenuItems();

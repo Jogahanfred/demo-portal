@@ -21,8 +21,10 @@
                     </svg>                          
                 </span>
             </button>
-            <a href="/">
-                <img src="./images/logo-mi-upc.svg" alt="logo-mi-upc" class="w-25" />
+            <a href="/" class="flex items-center justify-center">
+                <!-- <img src="./images/logo-mi-upc.svg" alt="logo-mi-upc" class="w-25" /> -->
+                <span class="relative text-3xl tracking-[-0.005em] text-gray-900 mr-4 after:content-[''] after:absolute after:h-6 after:top-[5px] after:border-r-[1.5px] after:border-gray-500 after:right-[-10px]">SISGEDA </span><img src="./images/logo-gru51.png" alt="" class="mb-[2px] w-[1.6rem] h-[1.6rem]" >
+                <!-- <img src="./images/logo-sisgeda.png" alt="logo-mi-upc" class="w-[120px] h-[30px]" /> -->
             </a>
             <div class="hidden lg:block ml-8">
                 <ul class="flex justify-start items-center">
@@ -42,6 +44,11 @@
                         <a href="#" class="lg:flex lg:justify-start after:content-[''] after:h-2 after:left-0 after:absolute after:bottom-2 after:border after:border-fap-red">
                             <span class="text-fap-base pr-1 text-lg lg:text-base">MÁS SERVICIOS</span>
                             <img src="./images/icon-service.svg" alt="services" class="hidden lg:block">
+                        </a>
+                    </li>
+                    <li class="relative py-1 lg:py-0 lg:px-4">
+                        <a href="#" class="lg:flex lg:justify-start after:content-[''] after:h-2 after:left-0 after:absolute after:bottom-3.5 after:border after:border-fap-red">
+                            <img src="./images/logo-fap.png" alt="services" class="hidden lg:block w-20" >
                         </a>
                     </li>
                 </ul>
@@ -75,7 +82,10 @@
                     <span class="text-xs">
                         <svg id="btn-arrow-account-lg-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>                      
+                        </svg>   
+                        <svg id="btn-arrow-account-lg-up" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 hidden">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                        </svg>                    
                     </span>
                 </div>
                 <div id="content-image-account" class="relative lg:hidden">
@@ -146,6 +156,7 @@
                             <img src="./images/icon-service.svg" alt="services" class="hidden lg:block">
                         </a>
                     </li>
+                    
                     <div class="relative lg:mr-[20px] py-[5px] lg:py-[0] lg:px-[15px]">
                         <div id="btn-show-icon-help" class="menu-channels flex items-center cursor-pointer justify-between py-1.5 hover:text-fap-red">
                             <span class="pr-1 text-[18px] lg:text-[16px]">NECESITAS AYUDA?</span>
@@ -443,12 +454,24 @@
         <main class="pt-16 transition-[margin] duration-200 lg:ml-36">
             <div class="lg:grid lg:grid-cols-[1fr_306px] bg-fap-background">
                 <div>
-                    <div class="mb-1 aspect-[34/5]">
+                    <div id="content-release" class="mb-1 aspect-[34/5] relative">
                         <div class="">
                             <a href="#" target="_blank">
-                                <img src="./images/comunicado-sistema.jpg" alt="" class="w-full h-full no-pointer-events">
+                                <!-- <img src="./images/comunicado-sistema.jpg" alt="" class="w-full h-full no-pointer-events"> -->
+                                <img src="./images/portal-anuncio-1.png" alt="" class="w-full h-full no-pointer-events">
                             </a>
                         </div>
+                        <div class="absolute z-10 top-0.5 right-5">
+                            <button id="btn-close-release" class="flex items-center my-4 font-Zizou text-sm tracking-normal font-extrabold border border-fap-blue-main  hover:bg-fap-blue-dark bg-fap-blue-main hover:tracking-wide transition-all
+                                         hover:bg-upc-main-bold text-white  px-1 py-1 lg:px-9 lg:py-2 relative after:content-[''] after:absolute after:border after:h-full after:w-full after:top-1 after:left-1 after:z-[-1] after:border-fap-blue-main">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 lg:ml-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                                <span class="max-lg:hidden">Cerrar anuncio</span>
+                            </button>  
+                                                   
+                        </div>
+                          
                     </div>
                     <div class="py-8 px-3 lg:px-10">
                         
@@ -479,7 +502,7 @@
                                 
                                 <div class="card-h-title-container mb-6">
                                     <div class="flex justify-between items-start mb-1">
-                                        <h2 class="text-4xl uppercase text-fap-blue-dark">Mis Horarios</h2>
+                                        <h2 class="text-4xl uppercase text-fap-blue-dark">Mi Programación</h2>
                                         <span>
                                             <svg width="42" height="41" viewBox="0 0 42 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M29.0186 39.7274H37.7561C38.6348 39.7249 39.4767 39.3936 40.098 38.8058C40.7193 38.218 41.0695 37.4215 41.0721 36.5902V30.7549H29.0186V39.7274Z" fill="#E50A17"></path>
@@ -626,7 +649,7 @@
                                 
                                 <div class="card-h-title-container mb-6">
                                     <div class="flex justify-between items-start mb-1">
-                                        <h2 class="text-4xl uppercase text-fap-blue-dark">Mis Notas</h2>
+                                        <h2 class="text-4xl uppercase text-fap-blue-dark">Mis Calificaciones</h2>
                                         <span>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="44" height="41" viewBox="0 0 26.76 18.46">
                                                   <path id="Path_75749" data-name="Path 75749" d="M14.88,4.27l12,4.71-12,4.7-12-4.7Z" transform="translate(-0.12 -4.27)" fill="#e50a17"></path>

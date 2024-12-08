@@ -15,6 +15,7 @@ module.exports = {
         'fap-neutral':'#d9d9d9',
         'fap-base':'#191919',
         'fap-red':'#e50a17',
+        'fap-blue-main':'#1c2e54',
         'fap-blue':'#35158c',
         'fap-blue-dark':'#270b73',
         'fap-blue-light':'#bfe8ff'
